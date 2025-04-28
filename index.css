@@ -1,0 +1,330 @@
+/* ===== Algemeen ===== */
+* {
+     box-sizing: border-box;
+ }
+ body {
+     margin: 0;
+     font-family: 'Poppins', sans-serif;
+     background-color: #fff7f8;
+     color: #333;
+     scroll-behavior: smooth;
+ }
+ .container {
+     max-width: 1300px; /* Vergroot de maximale breedte */
+     margin: 0 auto;
+     padding: 0 2rem; /* Meer ruimte rondom */
+ }
+ 
+ /* ===== NAVBAR ===== */
+ nav {
+     background-color: #ffe0e6;
+     position: fixed;
+     width: 100%;
+     top: 0; left: 0;
+     padding: 1.5rem 2rem 1.5rem 1rem; /* Grotere padding voor de navbar, logo meer naar links */
+     box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Meer schaduw voor diepte */
+     z-index: 100;
+ }
+ nav .container {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+ nav .logo {
+     font-family: 'Dancing Script', cursive;
+     font-size: 3rem; /* Groter logo */
+     color: #d6336c;
+ }
+ nav .nav-links {
+     list-style: none;
+     display: flex; gap: 3rem; /* Vergrote ruimte tussen menu-items */
+     margin: 0; padding: 0;
+ }
+ nav .nav-links a {
+     text-decoration: none;
+     font-weight: 700; /* Vettere tekst voor links */
+     color: #333;
+     display: flex; align-items: center; gap: .75rem; /* Meer ruimte tussen icoon en tekst */
+     transition: color .3s;
+     font-size: 1.4rem; /* Grotere tekst voor links */
+ }
+ nav .nav-links a:hover {
+     color: #d6336c;
+ }
+ 
+ /* ===== HERO ===== */
+ .hero {
+     padding-top: 120px; /* Meer ruimte bovenaan vanwege grotere nav */
+     padding-bottom: 6rem; /* Meer ruimte onderaan */
+ }
+ .hero-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Grotere grid items */
+     align-items: center;
+     gap: 3rem; /* Meer ruimte tussen de secties */
+ }
+ .hero-text h1 {
+     font-size: 4.5rem; /* Veel groter voor een grotere impact */
+     line-height: 1.2;
+     color: #333;
+ }
+ .hero-text h1 span {
+     display: block;
+     font-size: 2rem;
+     color: #d6336c;
+     margin-top: 1rem;
+ }
+ .hero-text p {
+     margin: 2rem 0;
+     font-size: 1.25rem; /* Grotere tekst voor paragraaf */
+     line-height: 1.7;
+     max-width: 600px; /* Max breedte voor leesbaarheid */
+ }
+ .btn {
+     display: inline-block;
+     background-color: #d6336c;
+     color: #fff;
+     text-decoration: none;
+     padding: 0.75rem 2rem; /* Grotere knop met kleinere padding */
+     border-radius: 50px;
+     font-weight: 700; /* Vettere tekst op de knop */
+     font-size: 1rem; /* Kleinere tekst op de knop */
+     transition: background-color .3s;
+ }
+ .btn:hover {
+     background-color: #a61e4d;
+ }
+ .hero-image img {
+     width: 100%;
+     border-radius: 25px; /* Grotere afgeronde hoeken */
+     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+ }
+ 
+ /* ===== FEATURES ===== */
+ .features {
+     background-color: #f5f0f2;
+     padding: 6rem 0; /* Meer ruimte boven en onder */
+ }
+ .features .container {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 3rem;
+     justify-content: center;
+ }
+ .feature-card {
+     background: #fff;
+     flex: 1 1 300px; /* Grotere kaarten */
+     max-width: 350px;
+     padding: 2.5rem;
+     text-align: center;
+     border-radius: 20px; /* Grotere afgeronde hoeken */
+     box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+     transition: transform .3s;
+ }
+ .feature-card:hover {
+     transform: translateY(-10px); /* Effect bij hover */
+ }
+ .feature-card i {
+     font-size: 3rem; /* Grotere iconen */
+     color: #d6336c;
+     margin-bottom: 1.5rem; /* Meer ruimte boven het icoon */
+ }
+ .feature-card h3 {
+     margin-bottom: 1rem;
+     font-size: 1.5rem; /* Grotere titel */
+     color: #333;
+ }
+ .feature-card p {
+     font-size: 1.2rem; /* Grotere tekst in de kaarten */
+     color: #666;
+     line-height: 1.7;
+ }
+ 
+ /* ===== RESPONSIEF ===== */
+ @media (max-width: 768px) {
+     nav .nav-links {
+         display: none;
+     }
+     /* Je kunt hier later een hamburger-menu toevoegen */
+ }
+ /* ===== REINIGEN ===== */
+.reinigen {
+     padding: 6rem 0;
+ }
+ .reinigen-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+     align-items: center;
+     gap: 4rem;
+ }
+ .reinigen-text h2 {
+     font-size: 3rem;
+     color: #d6336c;
+     margin-bottom: 2rem;
+ }
+ .reinigen-text p {
+     font-size: 1.2rem;
+     line-height: 1.7;
+     color: #666;
+     margin-bottom: 2rem;
+ }
+ .reinigen-text ul {
+     list-style: none;
+     padding: 0;
+ }
+ .reinigen-text ul li {
+     font-size: 1.2rem;
+     margin-bottom: 1rem;
+     display: flex;
+     align-items: center;
+     gap: .75rem;
+     color: #333;
+ }
+ .reinigen-text ul li i {
+     color: #d6336c;
+ }
+ .reinigen-image img {
+     width: 100%;
+     border-radius: 20px;
+     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+ }
+ 
+ /* ===== TARIEVEN ===== */
+ .tarieven {
+     background-color: #ffe0e6;
+     padding: 6rem 0;
+     text-align: center;
+ }
+ .tarieven h2 {
+     font-size: 3rem;
+     color: #d6336c;
+     margin-bottom: 4rem;
+ }
+ .tarief-lijst {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 3rem;
+     justify-content: center;
+ }
+ .tarief-kaart {
+     background: #fff;
+     padding: 3rem 2rem;
+     border-radius: 20px;
+     box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+     max-width: 300px;
+     flex: 1 1 250px;
+     transition: transform .3s;
+ }
+ .tarief-kaart:hover {
+     transform: translateY(-10px);
+ }
+ .tarief-kaart h3 {
+     font-size: 1.8rem;
+     color: #333;
+     margin-bottom: 1rem;
+ }
+ .prijs {
+     font-size: 2rem;
+     font-weight: 700;
+     color: #d6336c;
+     margin-bottom: 2rem;
+ }
+ .tarief-kaart ul {
+     list-style: none;
+     padding: 0;
+ }
+ .tarief-kaart ul li {
+     font-size: 1.1rem;
+     margin-bottom: 1rem;
+     display: flex;
+     align-items: center;
+     gap: .5rem;
+     color: #666;
+ }
+ .tarief-kaart ul li i {
+     color: #d6336c;
+ }
+ 
+ /* ===== CONTACT ===== */
+ .contact {
+     padding: 6rem 0;
+ }
+ .contact-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+     gap: 4rem;
+     align-items: center;
+ }
+ .contact-info h2 {
+     font-size: 3rem;
+     color: #d6336c;
+     margin-bottom: 2rem;
+ }
+ .contact-info p {
+     font-size: 1.2rem;
+     color: #666;
+     margin-bottom: 2rem;
+ }
+ .contact-info ul {
+     list-style: none;
+     padding: 0;
+ }
+ .contact-info ul li {
+     font-size: 1.2rem;
+     margin-bottom: 1rem;
+     display: flex;
+     align-items: center;
+     gap: .75rem;
+     color: #333;
+ }
+ .contact-info ul li i {
+     color: #d6336c;
+ }
+ .contact-form form {
+     display: flex;
+     flex-direction: column;
+     gap: 1.5rem;
+ }
+ .contact-form input,
+ .contact-form textarea {
+     width: 100%;
+     padding: 1rem;
+     border: 2px solid #ffd5dc;
+     border-radius: 12px;
+     font-size: 1rem;
+ }
+ .contact-form textarea {
+     resize: vertical;
+ }
+ .contact-form button {
+     align-self: flex-start;
+ }
+ 
+ /* ===== FOOTER ===== */
+ footer {
+     background-color: #ffe0e6;
+     padding: 2rem 0;
+     text-align: center;
+ }
+ footer p {
+     margin: 0;
+     font-size: 1rem;
+     color: #666;
+ } 
+
+ /* =====whatsapp icon ===== */
+ .whatsapp-icon {
+     position: fixed;
+     bottom: 20px;
+     left: 20px;
+     background-color: #25d366; /* Thema kleur voor WhatsApp */
+     padding: 15px;
+     border-radius: 50%;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     cursor: pointer;
+     z-index: 200;
+   }
+   .whatsapp-icon i {
+     font-size: 2rem;
+     color: white;
+   }
