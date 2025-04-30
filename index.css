@@ -15,15 +15,43 @@
      padding: 0 2rem; /* Meer ruimte rondom */
  }
  
+ /* Smooth scroll behavior */
+ html {
+     scroll-behavior: smooth;
+ }
+ 
+ /* Fade-in animation for sections */
+ @keyframes fadeIn {
+     from {
+         opacity: 0;
+         transform: translateY(20px);
+     }
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+ 
+ section {
+     animation: fadeIn 0.8s ease-out;
+ }
+ 
  /* ===== NAVBAR ===== */
  nav {
      background-color: #ffe0e6;
      position: fixed;
      width: 100%;
      top: 0; left: 0;
-     padding: 1.5rem 2rem 1.5rem 1rem; /* Grotere padding voor de navbar, logo meer naar links */
-     box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Meer schaduw voor diepte */
+     padding: 1.5rem 2rem 1.5rem 1rem;
+     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
      z-index: 100;
+     transition: all 0.3s ease;
+ }
+ 
+ nav.scrolled {
+     padding: 1rem 2rem;
+     background-color: rgba(255, 224, 230, 0.95);
+     backdrop-filter: blur(10px);
  }
  nav .container {
      display: flex;
@@ -47,9 +75,23 @@
      display: flex; align-items: center; gap: .75rem; /* Meer ruimte tussen icoon en tekst */
      transition: color .3s;
      font-size: 1.4rem; /* Grotere tekst voor links */
+     position: relative;
  }
  nav .nav-links a:hover {
      color: #d6336c;
+ }
+ nav .nav-links a::after {
+     content: '';
+     position: absolute;
+     width: 0;
+     height: 2px;
+     bottom: 0;
+     left: 0;
+     background-color: #d6336c;
+     transition: width 0.3s;
+ }
+ nav .nav-links a:hover::after {
+     width: 100%;
  }
  
  /* ===== HERO ===== */
@@ -119,10 +161,11 @@
      text-align: center;
      border-radius: 20px; /* Grotere afgeronde hoeken */
      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-     transition: transform .3s;
+     transition: transform 0.3s, box-shadow 0.3s;
  }
  .feature-card:hover {
-     transform: translateY(-10px); /* Effect bij hover */
+     transform: translateY(-10px);
+     box-shadow: 0 12px 24px rgba(0,0,0,0.15);
  }
  .feature-card i {
      font-size: 3rem; /* Grotere iconen */
@@ -213,10 +256,11 @@
      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
      max-width: 300px;
      flex: 1 1 250px;
-     transition: transform .3s;
+     transition: transform 0.3s, box-shadow 0.3s;
  }
  .tarief-kaart:hover {
      transform: translateY(-10px);
+     box-shadow: 0 12px 24px rgba(0,0,0,0.15);
  }
  .tarief-kaart h3 {
      font-size: 1.8rem;
@@ -248,17 +292,21 @@
  /* ===== CONTACT ===== */
  .contact {
      padding: 6rem 0;
+     background-color: #fff;
  }
  .contact-grid {
      display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+     grid-template-columns: 1fr 1fr;
      gap: 4rem;
-     align-items: center;
+     align-items: start;
+ }
+ .contact-info {
+     padding: 2rem;
  }
  .contact-info h2 {
-     font-size: 3rem;
+     font-size: 2.5rem;
      color: #d6336c;
-     margin-bottom: 2rem;
+     margin-bottom: 1.5rem;
  }
  .contact-info p {
      font-size: 1.2rem;
@@ -268,36 +316,104 @@
  .contact-info ul {
      list-style: none;
      padding: 0;
+     margin-bottom: 2rem;
  }
  .contact-info ul li {
-     font-size: 1.2rem;
-     margin-bottom: 1rem;
      display: flex;
      align-items: center;
-     gap: .75rem;
+     gap: 1rem;
+     margin-bottom: 1rem;
+     font-size: 1.1rem;
      color: #333;
  }
  .contact-info ul li i {
      color: #d6336c;
+     font-size: 1.2rem;
  }
- .contact-form form {
+ .contact-info ul li a {
+     color: #333;
+     text-decoration: none;
+     transition: color 0.3s;
+ }
+ .contact-info ul li a:hover {
+     color: #d6336c;
+ }
+ .social-links {
      display: flex;
-     flex-direction: column;
      gap: 1.5rem;
+     margin-top: 2rem;
  }
- .contact-form input,
- .contact-form textarea {
+ .social-link {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 40px;
+     height: 40px;
+     background-color: #ffe0e6;
+     border-radius: 50%;
+     color: #d6336c;
+     text-decoration: none;
+     transition: all 0.3s;
+ }
+ .social-link:hover {
+     background-color: #d6336c;
+     color: #fff;
+     transform: translateY(-3px);
+ }
+ .contact-form {
+     background-color: #fff;
+     padding: 2rem;
+     border-radius: 20px;
+     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+ }
+ .form-group {
+     margin-bottom: 1.5rem;
+ }
+ .form-group input,
+ .form-group textarea {
      width: 100%;
      padding: 1rem;
-     border: 2px solid #ffd5dc;
-     border-radius: 12px;
+     border: 2px solid #ffe0e6;
+     border-radius: 10px;
      font-size: 1rem;
+     transition: all 0.3s;
  }
- .contact-form textarea {
+ .form-group input:focus,
+ .form-group textarea:focus {
+     outline: none;
+     border-color: #d6336c;
+     box-shadow: 0 0 0 3px rgba(214, 51, 108, 0.1);
+ }
+ .form-group textarea {
+     height: 150px;
      resize: vertical;
  }
  .contact-form button {
-     align-self: flex-start;
+     width: 100%;
+     padding: 1rem;
+     background-color: #d6336c;
+     color: #fff;
+     border: none;
+     border-radius: 10px;
+     font-size: 1.1rem;
+     font-weight: 600;
+     cursor: pointer;
+     transition: all 0.3s;
+ }
+ .contact-form button:hover {
+     background-color: #a61e4d;
+     transform: translateY(-2px);
+ }
+ /* Responsive design for contact section */
+ @media (max-width: 768px) {
+     .contact-grid {
+         grid-template-columns: 1fr;
+     }
+     
+     .contact-info,
+     .contact-form {
+         padding: 1.5rem;
+     }
  }
  
  /* ===== FOOTER ===== */
