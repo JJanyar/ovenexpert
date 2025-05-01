@@ -1,446 +1,541 @@
 /* ===== Algemeen ===== */
 * {
-     box-sizing: border-box;
- }
- body {
-     margin: 0;
-     font-family: 'Poppins', sans-serif;
-     background-color: #fff7f8;
-     color: #333;
-     scroll-behavior: smooth;
- }
- .container {
-     max-width: 1300px; /* Vergroot de maximale breedte */
-     margin: 0 auto;
-     padding: 0 2rem; /* Meer ruimte rondom */
- }
- 
- /* Smooth scroll behavior */
- html {
-     scroll-behavior: smooth;
- }
- 
- /* Fade-in animation for sections */
- @keyframes fadeIn {
-     from {
-         opacity: 0;
-         transform: translateY(20px);
-     }
-     to {
-         opacity: 1;
-         transform: translateY(0);
-     }
- }
- 
- section {
-     animation: fadeIn 0.8s ease-out;
- }
- 
- /* ===== NAVBAR ===== */
- nav {
-     background-color: #ffe0e6;
-     position: fixed;
-     width: 100%;
-     top: 0; left: 0;
-     padding: 1.5rem 2rem 1.5rem 1rem;
-     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-     z-index: 100;
-     transition: all 0.3s ease;
- }
- 
- nav.scrolled {
-     padding: 1rem 2rem;
-     background-color: rgba(255, 224, 230, 0.95);
-     backdrop-filter: blur(10px);
- }
- nav .container {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
- }
- nav .logo {
-     font-family: 'Dancing Script', cursive;
-     font-size: 3rem; /* Groter logo */
-     color: #d6336c;
- }
- nav .nav-links {
-     list-style: none;
-     display: flex; gap: 3rem; /* Vergrote ruimte tussen menu-items */
-     margin: 0; padding: 0;
- }
- nav .nav-links a {
-     text-decoration: none;
-     font-weight: 700; /* Vettere tekst voor links */
-     color: #333;
-     display: flex; align-items: center; gap: .75rem; /* Meer ruimte tussen icoon en tekst */
-     transition: color .3s;
-     font-size: 1.4rem; /* Grotere tekst voor links */
-     position: relative;
- }
- nav .nav-links a:hover {
-     color: #d6336c;
- }
- nav .nav-links a::after {
-     content: '';
-     position: absolute;
-     width: 0;
-     height: 2px;
-     bottom: 0;
-     left: 0;
-     background-color: #d6336c;
-     transition: width 0.3s;
- }
- nav .nav-links a:hover::after {
-     width: 100%;
- }
- 
- /* ===== HERO ===== */
- .hero {
-     padding-top: 120px; /* Meer ruimte bovenaan vanwege grotere nav */
-     padding-bottom: 6rem; /* Meer ruimte onderaan */
- }
- .hero-grid {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Grotere grid items */
-     align-items: center;
-     gap: 3rem; /* Meer ruimte tussen de secties */
- }
- .hero-text h1 {
-     font-size: 4.5rem; /* Veel groter voor een grotere impact */
-     line-height: 1.2;
-     color: #333;
- }
- .hero-text h1 span {
-     display: block;
-     font-size: 2rem;
-     color: #d6336c;
-     margin-top: 1rem;
- }
- .hero-text p {
-     margin: 2rem 0;
-     font-size: 1.25rem; /* Grotere tekst voor paragraaf */
-     line-height: 1.7;
-     max-width: 600px; /* Max breedte voor leesbaarheid */
- }
- .btn {
-     display: inline-block;
-     background-color: #d6336c;
-     color: #fff;
-     text-decoration: none;
-     padding: 0.75rem 2rem; /* Grotere knop met kleinere padding */
-     border-radius: 50px;
-     font-weight: 700; /* Vettere tekst op de knop */
-     font-size: 1rem; /* Kleinere tekst op de knop */
-     transition: background-color .3s;
- }
- .btn:hover {
-     background-color: #a61e4d;
- }
- .hero-image img {
-     width: 100%;
-     border-radius: 25px; /* Grotere afgeronde hoeken */
-     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
- }
- 
- /* ===== FEATURES ===== */
- .features {
-     background-color: #f5f0f2;
-     padding: 6rem 0; /* Meer ruimte boven en onder */
- }
- .features .container {
-     display: flex;
-     flex-wrap: wrap;
-     gap: 3rem;
-     justify-content: center;
- }
- .feature-card {
-     background: #fff;
-     flex: 1 1 300px; /* Grotere kaarten */
-     max-width: 350px;
-     padding: 2.5rem;
-     text-align: center;
-     border-radius: 20px; /* Grotere afgeronde hoeken */
-     box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-     transition: transform 0.3s, box-shadow 0.3s;
- }
- .feature-card:hover {
-     transform: translateY(-10px);
-     box-shadow: 0 12px 24px rgba(0,0,0,0.15);
- }
- .feature-card i {
-     font-size: 3rem; /* Grotere iconen */
-     color: #d6336c;
-     margin-bottom: 1.5rem; /* Meer ruimte boven het icoon */
- }
- .feature-card h3 {
-     margin-bottom: 1rem;
-     font-size: 1.5rem; /* Grotere titel */
-     color: #333;
- }
- .feature-card p {
-     font-size: 1.2rem; /* Grotere tekst in de kaarten */
-     color: #666;
-     line-height: 1.7;
- }
- 
- /* ===== RESPONSIEF ===== */
- @media (max-width: 768px) {
-     nav .nav-links {
-         display: none;
-     }
-     /* Je kunt hier later een hamburger-menu toevoegen */
- }
- /* ===== REINIGEN ===== */
-.reinigen {
-     padding: 6rem 0;
- }
- .reinigen-grid {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-     align-items: center;
-     gap: 4rem;
- }
- .reinigen-text h2 {
-     font-size: 3rem;
-     color: #d6336c;
-     margin-bottom: 2rem;
- }
- .reinigen-text p {
-     font-size: 1.2rem;
-     line-height: 1.7;
-     color: #666;
-     margin-bottom: 2rem;
- }
- .reinigen-text ul {
-     list-style: none;
-     padding: 0;
- }
- .reinigen-text ul li {
-     font-size: 1.2rem;
-     margin-bottom: 1rem;
-     display: flex;
-     align-items: center;
-     gap: .75rem;
-     color: #333;
- }
- .reinigen-text ul li i {
-     color: #d6336c;
- }
- .reinigen-image img {
-     width: 100%;
-     border-radius: 20px;
-     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
- }
- 
- /* ===== TARIEVEN ===== */
- .tarieven {
-     background-color: #ffe0e6;
-     padding: 6rem 0;
-     text-align: center;
- }
- .tarieven h2 {
-     font-size: 3rem;
-     color: #d6336c;
-     margin-bottom: 4rem;
- }
- .tarief-lijst {
-     display: flex;
-     flex-wrap: wrap;
-     gap: 3rem;
-     justify-content: center;
- }
- .tarief-kaart {
-     background: #fff;
-     padding: 3rem 2rem;
-     border-radius: 20px;
-     box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-     max-width: 300px;
-     flex: 1 1 250px;
-     transition: transform 0.3s, box-shadow 0.3s;
- }
- .tarief-kaart:hover {
-     transform: translateY(-10px);
-     box-shadow: 0 12px 24px rgba(0,0,0,0.15);
- }
- .tarief-kaart h3 {
-     font-size: 1.8rem;
-     color: #333;
-     margin-bottom: 1rem;
- }
- .prijs {
-     font-size: 2rem;
-     font-weight: 700;
-     color: #d6336c;
-     margin-bottom: 2rem;
- }
- .tarief-kaart ul {
-     list-style: none;
-     padding: 0;
- }
- .tarief-kaart ul li {
-     font-size: 1.1rem;
-     margin-bottom: 1rem;
-     display: flex;
-     align-items: center;
-     gap: .5rem;
-     color: #666;
- }
- .tarief-kaart ul li i {
-     color: #d6336c;
- }
- 
- /* ===== CONTACT ===== */
- .contact {
-     padding: 6rem 0;
-     background-color: #fff;
- }
- .contact-grid {
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     gap: 4rem;
-     align-items: start;
- }
- .contact-info {
-     padding: 2rem;
- }
- .contact-info h2 {
-     font-size: 2.5rem;
-     color: #d6336c;
-     margin-bottom: 1.5rem;
- }
- .contact-info p {
-     font-size: 1.2rem;
-     color: #666;
-     margin-bottom: 2rem;
- }
- .contact-info ul {
-     list-style: none;
-     padding: 0;
-     margin-bottom: 2rem;
- }
- .contact-info ul li {
-     display: flex;
-     align-items: center;
-     gap: 1rem;
-     margin-bottom: 1rem;
-     font-size: 1.1rem;
-     color: #333;
- }
- .contact-info ul li i {
-     color: #d6336c;
-     font-size: 1.2rem;
- }
- .contact-info ul li a {
-     color: #333;
-     text-decoration: none;
-     transition: color 0.3s;
- }
- .contact-info ul li a:hover {
-     color: #d6336c;
- }
- .social-links {
-     display: flex;
-     gap: 1.5rem;
-     margin-top: 2rem;
- }
- .social-link {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     width: 40px;
-     height: 40px;
-     background-color: #ffe0e6;
-     border-radius: 50%;
-     color: #d6336c;
-     text-decoration: none;
-     transition: all 0.3s;
- }
- .social-link:hover {
-     background-color: #d6336c;
-     color: #fff;
-     transform: translateY(-3px);
- }
- .contact-form {
-     background-color: #fff;
-     padding: 2rem;
-     border-radius: 20px;
-     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
- }
- .form-group {
-     margin-bottom: 1.5rem;
- }
- .form-group input,
- .form-group textarea {
-     width: 100%;
-     padding: 1rem;
-     border: 2px solid #ffe0e6;
-     border-radius: 10px;
-     font-size: 1rem;
-     transition: all 0.3s;
- }
- .form-group input:focus,
- .form-group textarea:focus {
-     outline: none;
-     border-color: #d6336c;
-     box-shadow: 0 0 0 3px rgba(214, 51, 108, 0.1);
- }
- .form-group textarea {
-     height: 150px;
-     resize: vertical;
- }
- .contact-form button {
-     width: 100%;
-     padding: 1rem;
-     background-color: #d6336c;
-     color: #fff;
-     border: none;
-     border-radius: 10px;
-     font-size: 1.1rem;
-     font-weight: 600;
-     cursor: pointer;
-     transition: all 0.3s;
- }
- .contact-form button:hover {
-     background-color: #a61e4d;
-     transform: translateY(-2px);
- }
- /* Responsive design for contact section */
- @media (max-width: 768px) {
-     .contact-grid {
-         grid-template-columns: 1fr;
-     }
-     
-     .contact-info,
-     .contact-form {
-         padding: 1.5rem;
-     }
- }
- 
- /* ===== FOOTER ===== */
- footer {
-     background-color: #ffe0e6;
-     padding: 2rem 0;
-     text-align: center;
- }
- footer p {
-     margin: 0;
-     font-size: 1rem;
-     color: #666;
- } 
+    box-sizing: border-box;
+}
 
- /* =====whatsapp icon ===== */
- .whatsapp-icon {
-     position: fixed;
-     bottom: 20px;
-     left: 20px;
-     background-color: #25d366; /* Thema kleur voor WhatsApp */
-     padding: 15px;
-     border-radius: 50%;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-     cursor: pointer;
-     z-index: 200;
-   }
-   .whatsapp-icon i {
-     font-size: 2rem;
-     color: white;
-   }
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff7f8;
+    color: #333;
+    scroll-behavior: smooth;
+    max-width: 100vw;
+}
+
+.container {
+    max-width: 1300px; /* Vergroot de maximale breedte */
+    margin: 0 auto;
+    padding: 0 2rem; /* Meer ruimte rondom */
+    width: 100%;
+}
+
+/* Fix potential overflow issues */
+section {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Images and videos */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scrolling at html level too */
+}
+
+/* Fade-in animation for sections */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    background-color: #ffe0e6;
+    position: fixed;
+    width: 100%;
+    top: 0; left: 0;
+    padding: 1.5rem 2rem 1.5rem 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+nav.scrolled {
+    padding: 1rem 2rem;
+    background-color: rgba(255, 224, 230, 0.95);
+    backdrop-filter: blur(10px);
+}
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem; /* Groter logo */
+    color: #d6336c;
+}
+nav .nav-links {
+    list-style: none;
+    display: flex; gap: 3rem; /* Vergrote ruimte tussen menu-items */
+    margin: 0; padding: 0;
+}
+nav .nav-links a {
+    text-decoration: none;
+    font-weight: 700; /* Vettere tekst voor links */
+    color: #333;
+    display: flex; align-items: center; gap: .75rem; /* Meer ruimte tussen icoon en tekst */
+    transition: color .3s;
+    font-size: 1.4rem; /* Grotere tekst voor links */
+    position: relative;
+}
+nav .nav-links a:hover {
+    color: #d6336c;
+}
+nav .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #d6336c;
+    transition: width 0.3s;
+}
+nav .nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ===== HERO ===== */
+.hero {
+    padding-top: 120px; /* Meer ruimte bovenaan vanwege grotere nav */
+    padding-bottom: 6rem; /* Meer ruimte onderaan */
+}
+.hero-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Grotere grid items */
+    align-items: center;
+    gap: 3rem; /* Meer ruimte tussen de secties */
+}
+.hero-text h1 {
+    font-size: 4.5rem; /* Veel groter voor een grotere impact */
+    line-height: 1.2;
+    color: #333;
+}
+.hero-text h1 span {
+    display: block;
+    font-size: 2rem;
+    color: #d6336c;
+    margin-top: 1rem;
+}
+.hero-text p {
+    margin: 2rem 0;
+    font-size: 1.25rem; /* Grotere tekst voor paragraaf */
+    line-height: 1.7;
+    max-width: 600px; /* Max breedte voor leesbaarheid */
+}
+.btn {
+    display: inline-block;
+    background-color: #d6336c;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.75rem 2rem; /* Grotere knop met kleinere padding */
+    border-radius: 50px;
+    font-weight: 700; /* Vettere tekst op de knop */
+    font-size: 1rem; /* Kleinere tekst op de knop */
+    transition: background-color .3s;
+}
+.btn:hover {
+    background-color: #a61e4d;
+}
+.hero-image img {
+    width: 100%;
+    border-radius: 25px; /* Grotere afgeronde hoeken */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* ===== FEATURES ===== */
+.features {
+    background-color: #f5f0f2;
+    padding: 6rem 0; /* Meer ruimte boven en onder */
+}
+.features .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+}
+.feature-card {
+    background: #fff;
+    flex: 1 1 300px; /* Grotere kaarten */
+    max-width: 350px;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 20px; /* Grotere afgeronde hoeken */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+.feature-card i {
+    font-size: 3rem; /* Grotere iconen */
+    color: #d6336c;
+    margin-bottom: 1.5rem; /* Meer ruimte boven het icoon */
+}
+.feature-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem; /* Grotere titel */
+    color: #333;
+}
+.feature-card p {
+    font-size: 1.2rem; /* Grotere tekst in de kaarten */
+    color: #666;
+    line-height: 1.7;
+}
+
+/* ===== RESPONSIEF ===== */
+@media (max-width: 768px) {
+    /* Mobile header */
+    nav {
+        padding: 0.8rem 1rem;
+    }
+    
+    nav .logo {
+        font-size: 2rem;
+    }
+    
+    /* Hide desktop menu items */
+    nav .nav-links {
+        display: none;
+    }
+    
+    /* Adjust spacing for mobile */
+    .hero {
+        padding-top: 90px;
+    }
+    
+    .hero-grid,
+    .reinigen-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Smaller text size for mobile */
+    .hero-text h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    
+    .hero-text p {
+        text-align: center;
+    }
+    
+    .btn {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+    }
+    
+    /* Smaller font sizes for section headings */
+    .reinigen-text h2 {
+        font-size: 1.8rem !important;
+        text-align: center;
+    }
+    
+    /* Mobile contact section */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Extra small devices (phones, 576px and down) */
+@media (max-width: 576px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-text h1 span {
+        font-size: 1.5rem;
+    }
+    
+    .reinigen-text h2 {
+        font-size: 1.8rem !important
+    }
+    
+    .feature-card, 
+    .tarief-kaart {
+        padding: 1.5rem;
+    }
+}
+
+/* ===== REINIGEN ===== */
+.reinigen {
+    padding: 6rem 0;
+}
+.reinigen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    align-items: center;
+    gap: 4rem;
+}
+.reinigen-text h2 {
+    font-size: 3rem;
+    color: #d6336c;
+    margin-bottom: 2rem;
+}
+.reinigen-text p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 2rem;
+}
+.reinigen-text ul {
+    list-style: none;
+    padding: 0;
+}
+.reinigen-text ul li {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    color: #333;
+}
+.reinigen-text ul li i {
+    color: #d6336c;
+}
+.reinigen-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* ===== TARIEVEN ===== */
+.tarieven {
+    background-color: #ffe0e6;
+    padding: 6rem 0;
+    text-align: center;
+}
+.tarieven h2 {
+    font-size: 3rem;
+    color: #d6336c;
+    margin-bottom: 4rem;
+}
+.tarief-lijst {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+}
+.tarief-kaart {
+    background: #fff;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    max-width: 300px;
+    flex: 1 1 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.tarief-kaart:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+.tarief-kaart h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+.prijs {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #d6336c;
+    margin-bottom: 2rem;
+}
+.tarief-kaart ul {
+    list-style: none;
+    padding: 0;
+}
+.tarief-kaart ul li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: #666;
+}
+.tarief-kaart ul li i {
+    color: #d6336c;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+    padding: 6rem 0;
+    background-color: #fff;
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+.contact-info {
+    padding: 2rem;
+}
+.contact-info h2 {
+    font-size: 2.5rem;
+    color: #d6336c;
+    margin-bottom: 1.5rem;
+}
+.contact-info p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+.contact-info ul li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #333;
+}
+.contact-info ul li i {
+    color: #d6336c;
+    font-size: 1.2rem;
+}
+.contact-info ul li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.contact-info ul li a:hover {
+    color: #d6336c;
+}
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #ffe0e6;
+    border-radius: 50%;
+    color: #d6336c;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.social-link:hover {
+    background-color: #d6336c;
+    color: #fff;
+    transform: translateY(-3px);
+}
+.contact-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ffe0e6;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #d6336c;
+    box-shadow: 0 0 0 3px rgba(214, 51, 108, 0.1);
+}
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+.contact-form button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #d6336c;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.contact-form button:hover {
+    background-color: #a61e4d;
+    transform: translateY(-2px);
+}
+/* Responsive design for contact section */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info,
+    .contact-form {
+        padding: 1.5rem;
+    }
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #ffe0e6;
+    padding: 2rem 0;
+    text-align: center;
+}
+footer p {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+} 
+
+/* =====whatsapp icon ===== */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #25d366; /* Thema kleur voor WhatsApp */
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 200;
+  }
+  .whatsapp-icon i {
+    font-size: 2rem;
+    color: white;
+  }
