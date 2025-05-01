@@ -216,7 +216,12 @@
         
         // Create email subject and body
         const subject = `Contactaanvraag van ${name}`;
-        const body = `Naam: ${name}%0D%0AEmail: ${email}%0D%0ATelefoon: ${phone}%0D%0A%0D%0ABericht:%0D%0A${message}`;
+        const body = `Naam: ${name}
+Email: ${email}
+Telefoon: ${phone}
+
+Bericht:
+${message}`;
         
         // Create mailto link
         const mailtoLink = `mailto:info@ovenexpert.nl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
