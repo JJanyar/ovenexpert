@@ -1050,17 +1050,176 @@ nav .nav-links a:hover::after {
     .contact-options {
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: 0.8rem;
+    }
+    
+    .contact-block-link,
+    .social-media-blocks {
+        width: 85%;
+        max-width: 300px;
+    }
+    
+    .social-media-blocks .contact-block {
+        min-height: 90px;
+        padding: 0.8rem;
+    }
+    
+    .contact {
+        padding: 1.5rem 0;
+    }
+    
+    .contact-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .contact-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-block {
+        padding: 1.2rem;
+        border-radius: 12px;
+    }
+    
+    .contact-block-icon {
+        width: 45px;
+        height: 45px;
+        margin: 0 auto 0.5rem;
+    }
+    
+    .contact-block h3 {
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .contact-block p {
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .whatsapp-block .contact-block-icon i,
+    .instagram-block .contact-block-icon i,
+    .tiktok-block .contact-block-icon i {
+        font-size: 1.6rem;
+    }
+    
+    .contact-form {
+        padding: 1.2rem;
+        border-radius: 15px;
+        max-width: 500px;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 0.8rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+    }
+    
+    .form-group textarea {
+        height: 120px;
+    }
+    
+    .contact-form button {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+}
+
+/* For extra small mobile devices */
+@media (max-width: 576px) {
+    .contact {
+        padding: 1rem 0;
+    }
+    
+    .contact-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .contact-subtitle {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+        max-width: 90%;
+    }
+    
+    .contact-options {
+        gap: 0.6rem;
+        margin-bottom: 1.2rem;
     }
     
     .contact-block-link,
     .social-media-blocks {
         width: 90%;
-        max-width: 320px;
+        max-width: 280px;
     }
     
     .social-media-blocks .contact-block {
-        min-height: 100px;
+        min-height: 70px;
+        padding: 0.6rem;
+    }
+    
+    .social-media-blocks .contact-block-icon {
+        width: 28px;
+        height: 28px;
+        margin-bottom: 0.2rem;
+    }
+    
+    .social-media-blocks .contact-block h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .social-media-blocks .contact-block p {
+        font-size: 0.7rem;
+        margin-bottom: 0.1rem;
+    }
+    
+    .contact-block {
+        padding: 1rem;
+        border-radius: 10px;
+    }
+    
+    .contact-block-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0.4rem;
+    }
+    
+    .whatsapp-block .contact-block-icon i,
+    .instagram-block .contact-block-icon i,
+    .tiktok-block .contact-block-icon i {
+        font-size: 1.4rem;
+    }
+    
+    .contact-form {
+        padding: 1rem;
+        border-radius: 12px;
+    }
+    
+    .form-group {
+        margin-bottom: 0.8rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 0.7rem;
+        font-size: 0.8rem;
+    }
+    
+    .form-group textarea {
+        height: 100px;
+    }
+    
+    .contact-form button {
+        padding: 0.7rem;
+        font-size: 0.9rem;
     }
 }
 
