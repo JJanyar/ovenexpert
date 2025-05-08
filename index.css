@@ -221,6 +221,15 @@ nav .nav-links a:hover::after {
     background-color: #a61e4d;
     transform: scale(125%);
 }
+
+/* Voeg deze media query toe om hover effecten uit te schakelen op touch devices */
+@media (hover: none) {
+    .btn:hover {
+        background-color: #d6336c;
+        transform: none;
+    }
+}
+
 .hero-image img {
     margin-top: 100px;
     width: 100%;
