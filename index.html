@@ -29,18 +29,34 @@
   <!-- NAV -->
   <nav>
     <div class="container">
+      <!-- Logo links -->
       <div class="logo">Ovenexpert</div>
-      <div class="nav-right">
-        <a href="#tarieven" class="btn btn-nav">Tarieven</a>
+      
+      <!-- Afspraak knop gecentreerd -->
+      <div class="nav-controls">
+        <a href="#contact" class="btn-nav"><i class="ti ti-clock" style="font-size: 1.2rem; position: relative; top: 2px;"> </i>AFSPRAAK INPLANNEN</a>
         <button class="hamburger">
           <i class="ti ti-menu-2"></i>
         </button>
       </div>
+      
+      <!-- Nav links rechts -->
       <ul class="nav-links">
-        <li><a href="#home"><i class="ti ti-home"></i> <span>HOME</span></a></li>
-        <li><a href="#reinigen"><i class="ti ti-wash"></i> <span>REINIGEN</span></a></li>
-        <li><a href="#contact"><i class="ti ti-phone"></i> <span>CONTACT</span></a></li>
-        <li><a href="#contact" class="btn btn-nav-mobile">Afspraak Inplannen</a></li>
+        <li><a href="#home"><i class="ti ti-home" style="font-size: 1.2rem; position: relative; top: 1px;"></i> <span>HOME</span></a></li>
+        <li><a href="#reinigen"><i class="ti ti-wash"style="font-size: 1.2rem; position: relative; top: 2px;" ></i> <span>REINIGEN</span></a></li>
+        <li><a href="#tarieven"><i class="ti ti-wallet" style="font-size: 1.2rem; position: relative; top: 1px;"></i><span>TARIEVEN</span></a></li>
+        <li><a href="#contact"><i class="ti ti-phone" style="font-size: 1.2rem; position: relative; top: 1px;"></i><span>CONTACT</span></a></li>
+        <li class="btn-nav-mobile-container"><a href="#contact" class="btn btn-nav-mobile" ><i class="ti ti-clock" style="font-size: 1.2rem; position: relative; top: 1px;"></i><span>AFSPRAAK INPLANNEN</span></a></li>
+        
+        <!-- Mobile menu footer -->
+        <div class="mobile-menu-footer">
+          <div class="mobile-menu-brand">Ovenexpert</div>
+          <div class="mobile-social-links">
+            <a href="https://wa.me/31850604446" target="_blank"><i class="ti ti-brand-whatsapp"></i></a>
+            <a href="https://www.instagram.com/ovenexpert.nl" target="_blank"><i class="ti ti-brand-instagram"></i></a>
+            <a href="https://tiktok.com/@ovenexpert.nl" target="_blank"><i class="ti ti-brand-tiktok"></i></a>
+          </div>
+        </div>
       </ul>
     </div>
   </nav>
@@ -59,7 +75,7 @@
           Van hardnekkig vet tot ingebrand vuil: wij maken jouw keuken apparatuur weer als nieuw.  
           Veilig, snel en met milieuvriendelijke middelen.
         </p>
-        <a href="#contact" class="btn">Afspraak Inplannen</a>
+        <a href="#tarieven" class="btn">Bekijk Tarieven</a>
       </div>
     </div>
   </section>
@@ -246,8 +262,13 @@
       
       <div class="contact-form">
         <form id="contactForm">
-          <div class="form-group">
-            <input type="text" id="name" name="name" placeholder="Uw naam" required>
+          <div class="form-row">
+            <div class="form-group half">
+              <input type="text" id="name" name="name" placeholder="Uw naam" required>
+            </div>
+            <div class="form-group half">
+              <input type="text" id="location" name="location" placeholder="Uw woonplaats" required>
+            </div>
           </div>
           <div class="form-group">
             <input type="email" id="email" name="email" placeholder="Uw e-mailadres" required>
