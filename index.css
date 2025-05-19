@@ -29,6 +29,7 @@ body {
 section .container {
     max-width: 1300px; /* Vergroot de maximale breedte */
     margin: 0 auto;
+    margin-top: -150px;
 }
 
 section {
@@ -305,6 +306,7 @@ nav .logo {
 
 /* Enhanced mobile responsiveness */
 @media (max-width: 768px) {
+    
     /* Adjust feature card height on mobile */
     .feature-card {
         height: 220px;
