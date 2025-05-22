@@ -29,8 +29,11 @@ body {
 section .container {
     max-width: 1300px;
     margin: 0 auto;
+<<<<<<< HEAD
     margin-top: 0;
     margin-top: -20px;
+=======
+>>>>>>> 648ee34980e72284c2ca249fa3940b75aa786787
 }
 
 section {
@@ -335,7 +338,6 @@ nav .logo {
 
 /* Enhanced mobile responsiveness */
 @media (max-width: 768px) {
-    
     /* Adjust feature card height on mobile */
     .feature-card {
         height: 220px;
@@ -383,7 +385,11 @@ nav .logo {
 /* Extra small screen navigation */
 @media (max-width: 480px) {
     nav .logo {
+<<<<<<< HEAD
         font-size: 1.rem;
+=======
+        font-size: 2rem;
+>>>>>>> 648ee34980e72284c2ca249fa3940b75aa786787
     }
     
     .nav-controls {
@@ -1993,7 +1999,7 @@ footer .container {
     }
     
     .feature-card {
-        height: 320px;
+        height: 300px;
         padding: 2rem;
     }
     
