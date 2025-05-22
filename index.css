@@ -149,16 +149,25 @@ nav .logo {
 .btn-nav {
     background-color: #d6336c;
     color: white;
-    padding: 0.8rem 1.5rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 15px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
     border: 2px solid #d6336c;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
     text-align: center;
     box-shadow: 0 4px 8px rgba(214, 51, 108, 0.2);
     white-space: nowrap;
+}
+
+.btn-nav i {
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
 }
 
 .btn-nav:hover {
@@ -255,8 +264,18 @@ nav .logo {
     }
     
     .nav-controls .btn-nav {
-        font-size: 0.8rem;
-        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.3rem;
+    }
+    
+    .nav-controls .btn-nav i {
+        font-size: 1.1rem;
+        position: relative;
+        top: 0;
     }
     
     /* Hide logo when menu is active */
@@ -352,7 +371,7 @@ nav .logo {
 /* Extra small screen navigation */
 @media (max-width: 480px) {
     nav .logo {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
     
     .nav-controls {
@@ -360,8 +379,8 @@ nav .logo {
     }
     
     .nav-controls .btn-nav {
-        font-size: 0.75rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 0.6rem;
+        padding: 0.4rem 0.6rem;
     }
     
     .hamburger {
