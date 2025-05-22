@@ -27,17 +27,18 @@ body {
 
 /* Fix potential overflow issues */
 section .container {
-    max-width: 1300px; /* Vergroot de maximale breedte */
+    max-width: 1300px;
     margin: 0 auto;
-    margin-top: -150px;
+    margin-top: 0;
+    margin-top: -20px;
 }
 
 section {
     width: 100%;
     overflow: hidden;
     position: relative;
-    padding: 3rem 0;
-    scroll-margin-top: 60px;
+    padding: 6rem 0;
+    scroll-margin-top: 100px;
 }
 
 /* Section background gradient transitions */
@@ -67,12 +68,21 @@ section::before {
     background: linear-gradient(to bottom, #fff 0%, #fff 70%, #fdeff0 100%);
 }
 
-.tarieven::before {
+.reviews::before {
     background: linear-gradient(to bottom, #fdeff0 0%, #fdeff0 70%, #fff 100%);
+}
+
+.tarieven::before {
+    background: linear-gradient(to bottom, #fff7f8 0%, #fff7f8 70%, #fff 100%);
 }
 
 .contact::before {
     background: linear-gradient(to bottom, #fff 0%, #fff 70%, #ffe0e6 100%);
+
+}
+
+footer::before {
+    background: linear-gradient(to bottom, #ffe0e6 0%, #ffe0e6 70%, #ffe0e6 100%);
 }
 
 /* Images and videos */
@@ -249,7 +259,7 @@ nav .logo {
     }
     
     nav .logo {
-        font-size: 2.1rem;
+        font-size: 1.8rem;
         margin-left: 0;
         z-index: 1002;
         position: relative;
@@ -373,7 +383,7 @@ nav .logo {
 /* Extra small screen navigation */
 @media (max-width: 480px) {
     nav .logo {
-        font-size: 1.5rem;
+        font-size: 1.rem;
     }
     
     .nav-controls {
@@ -393,7 +403,7 @@ nav .logo {
 
 /* ===== HERO ===== */
 .hero {
-    padding-top: 120px;
+    padding-top: 80px;
     padding-bottom: 4rem;
     position: relative;
     overflow: hidden;
@@ -434,7 +444,7 @@ nav .logo {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    margin-top: -70px;
+    margin-top: 0;
 }
 
 .hero-text h1 {
@@ -812,6 +822,7 @@ nav .logo {
     color: #d6336c;
 }
 
+
 .reinigen-image {
     width: 100%;
     height: 400px;
@@ -833,6 +844,7 @@ nav .logo {
     left: 0;
     width: 100%;
     height: 100%;
+    top: 119px;
 }
 
 .slide img {
@@ -887,16 +899,23 @@ nav .logo {
 }
 
 @media (max-width: 576px) {
-    .reinigen-image {
-        height: 250px;
+    .reinigen {
+        padding: 2rem 0;
     }
-}
-
-@media (max-width: 768px) {
+    
+    .reinigen-grid {
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .reinigen-text {
+        padding: 1rem 0;
+    }
+    
     .reinigen-text h2 {
-        font-size: 1.6rem !important;
-        text-align: center;
+        font-size: 1.6rem;
         margin-bottom: 0.8rem;
+        text-align: left;
     }
     
     .reinigen-text h3 {
@@ -907,7 +926,9 @@ nav .logo {
     
     .reinigen-text p {
         font-size: 0.95rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.5;
+        text-align: left;
     }
     
     .reinigen-text ul li {
@@ -918,41 +939,11 @@ nav .logo {
     .reinigen-grid {
         gap: 2rem;
     }
-}
-
-@media (max-width: 576px) {
-    .reinigen {
-        padding: 1.5rem 0;
-    }
     
-    .reinigen-grid {
-        gap: 1.5rem;
-    }
-    
-    .reinigen-text h2 {
-        font-size: 1.4rem !important;
-        margin-bottom: 0.5rem;
-    }
-    
-    .reinigen-text h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.8rem;
-    }
-    
-    .reinigen-text p {
-        font-size: 0.85rem;
-        margin-bottom: 1rem;
-        line-height: 1.5;
-    }
-    
-    .reinigen-text ul li {
-        font-size: 0.85rem;
-        margin-bottom: 0.6rem;
-        gap: 0.5rem;
-    }
-    
-    .reinigen-image img {
-        border-radius: 15px;
+    .reinigen-image {
+        height: 250px;
+        margin: 0 -1rem;
+        width: calc(100% + 2rem);
     }
 }
 
@@ -1285,7 +1276,7 @@ nav .logo {
     }
     
     .contact-title {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         margin-bottom: 0.3rem;
     }
     
@@ -1371,8 +1362,23 @@ nav .logo {
 
 /* ===== FOOTER ===== */
 footer {
-    background-color: #ffe0e6;
+    background-color: #fff7f8;
     padding: 4rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+footer .container {
     position: relative;
     z-index: 2;
 }
@@ -2053,4 +2059,36 @@ footer {
     .footer-content {
         gap: 2rem;
     }
+}
+
+/* Reviews section styling */
+.reviews {
+    background-color: #fdeff0;
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.reviews::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #fdeff0 0%, #fdeff0 70%, #fff7f8 100%);
+    z-index: 1;
+}
+
+.reviews .container {
+    position: relative;
+    z-index: 2;
+}
+
+.reviews-wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
