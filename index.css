@@ -2091,3 +2091,34 @@ footer .container {
     position: relative;
     z-index: 2;
 }
+
+/* Aanpassen van de gap voor schermen kleiner dan 1750px */
+@media (max-width: 1750px) {
+    .nav-links {
+        gap: 1rem; /* Verkleinen van de gap tussen navigatie links */
+    }
+}
+
+/* Verbergen van de navigatie links en tonen van het hamburger menu voor schermen kleiner dan 1400px */
+@media (max-width: 1400px) {
+    .nav-links {
+        display: none; /* Verberg de navigatie links */
+    }
+
+    .hamburger {
+        display: flex; /* Toon het hamburger menu */
+    }
+
+    .nav-links.active {
+        display: flex; /* Toon de navigatie links wanneer het menu actief is */
+        flex-direction: column;
+        position: fixed;
+        top: 80px; /* Aanpassen aan de hoogte van je navbar */
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        padding: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+}
