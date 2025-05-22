@@ -233,7 +233,9 @@ nav .logo {
 .nav-links li a:hover::after {
     width: 100%;
 }
-
+.reviews h2 {
+    text-align: center;
+}
 .hamburger {
     display: none;
     background: none;
@@ -330,6 +332,49 @@ nav .logo {
     .btn-nav {
         font-size: 0.9rem;
         padding: 0.6rem 1.2rem;
+    }
+}
+/* Responsive navigation */
+@media (max-width: 1700px) {
+    .nav-links {
+        gap: 1.5rem;
+    }
+    
+    .nav-links li a {
+        font-size: 0.95rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+@media (max-width: 1400px) {
+    .nav-links {
+        gap: 1.2rem;
+    }
+    
+    .nav-links li a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.6rem;
+    }
+    
+    .btn-nav {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .nav-links li a {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.5rem;
+    }
+    
+    .btn-nav {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
     }
 }
 
@@ -835,6 +880,7 @@ nav .logo {
     height: 100%;
     position: relative;
     top: -119px;
+    
 }
 
 .slide {
@@ -2090,35 +2136,4 @@ footer .container {
     margin: 0 auto;
     position: relative;
     z-index: 2;
-}
-
-/* Aanpassen van de gap voor schermen kleiner dan 1750px */
-@media (max-width: 1750px) {
-    .nav-links {
-        gap: 1rem; /* Verkleinen van de gap tussen navigatie links */
-    }
-}
-
-/* Verbergen van de navigatie links en tonen van het hamburger menu voor schermen kleiner dan 1400px */
-@media (max-width: 1400px) {
-    .nav-links {
-        display: none; /* Verberg de navigatie links */
-    }
-
-    .hamburger {
-        display: flex; /* Toon het hamburger menu */
-    }
-
-    .nav-links.active {
-        display: flex; /* Toon de navigatie links wanneer het menu actief is */
-        flex-direction: column;
-        position: fixed;
-        top: 80px; /* Aanpassen aan de hoogte van je navbar */
-        left: 0;
-        right: 0;
-        background-color: #fff;
-        padding: 2rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-    }
 }
