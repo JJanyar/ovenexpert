@@ -548,7 +548,7 @@ nav .logo {
 @media (max-width: 768px) {
     .hero-grid {
         margin-top: -150px;
-        padding-bottom: 175px;
+        padding-bottom: 140px;
     }
     
     .hero-text h1 {
