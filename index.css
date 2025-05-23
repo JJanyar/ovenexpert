@@ -672,7 +672,7 @@ nav .logo {
 
 @media (max-width: 576px) {
     .intro-text h2 {
-        font-size: 1.4rem !important;
+        font-size: 1.3rem !important;
     }
 
     .intro-text p {
@@ -971,7 +971,7 @@ nav .logo {
     }
     
     .reinigen-text p {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
         margin-bottom: 0.8rem;
         line-height: 1.5;
         text-align: center;
