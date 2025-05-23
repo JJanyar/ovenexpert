@@ -88,7 +88,7 @@ footer::before {
 /* Images and videos */
 img, video, iframe {
     max-width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 /* Smooth scroll behavior */
@@ -403,7 +403,7 @@ nav .logo {
     
     /* Reinigen section */
     .reinigen-text h2 {
-        font-size: 1.7rem !important;
+        font-size: 1.5rem !important;
         margin-bottom: 1rem;
     }
     
@@ -548,6 +548,7 @@ nav .logo {
 @media (max-width: 768px) {
     .hero-grid {
         margin-top: -150px;
+        padding-bottom: 175px;
     }
     
     .hero-text h1 {
@@ -960,7 +961,7 @@ nav .logo {
     .reinigen-text h2 {
         font-size: 1.6rem;
         margin-bottom: 0.8rem;
-        text-align: left;
+        text-align: center;
     }
     
     .reinigen-text h3 {
@@ -973,7 +974,7 @@ nav .logo {
         font-size: 0.95rem;
         margin-bottom: 0.8rem;
         line-height: 1.5;
-        text-align: left;
+        text-align: center;
     }
     
     .reinigen-text ul li {
@@ -987,8 +988,8 @@ nav .logo {
     
     .reinigen-image {
         height: 250px;
-        margin: 0 -1rem;
-        width: calc(100% + 2rem);
+       
+        width: calc(90% + 2rem);
     }
 }
 
@@ -2136,4 +2137,33 @@ footer .container {
     margin: 0 auto;
     position: relative;
     z-index: 2;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 2rem 0;
+    }
+}
+
+.tarieven-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .tarieven-intro {
+        font-size: 0.85rem;
+        padding: 0 1rem;
+        margin-bottom: 2rem;
+    }
+    .reviews{
+        background-color: #fdeff0;
+       padding: 1rem 0;
+  position: relative;
+  overflow: hidden;
+    }
 }
