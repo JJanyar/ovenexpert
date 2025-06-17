@@ -118,3 +118,79 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// Before/After Slider functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const sliders = document.querySelectorAll('.comparison-slider');
+  
+  sliders.forEach(slider => {
+    const afterImage = slider.querySelector('.after-image');
+    const sliderHandle = slider.querySelector('.slider-handle');
+    const beforeLabel = slider.querySelector('.before-label');
+    const afterLabel = slider.querySelector('.after-label');
+    let isSliding = false;
+
+    if (slider && afterImage && sliderHandle) {
+      function updateSlider(x) {
+        const rect = slider.getBoundingClientRect();
+        const percentage = Math.max(0, Math.min(100, ((x - rect.left) / rect.width) * 100));
+        
+        afterImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+        sliderHandle.style.left = `${percentage}%`;
+
+        // Update label visibility based on slider position
+        if (percentage > 50) {
+          beforeLabel.style.opacity = '0';
+          afterLabel.style.opacity = '1';
+        } else {
+          beforeLabel.style.opacity = '1';
+          afterLabel.style.opacity = '0';
+        }
+      }
+
+      // Mouse events
+      sliderHandle.addEventListener('mousedown', function(e) {
+        isSliding = true;
+        e.preventDefault();
+      });
+
+      document.addEventListener('mousemove', function(e) {
+        if (isSliding) {
+          updateSlider(e.clientX);
+        }
+      });
+
+      document.addEventListener('mouseup', function() {
+        isSliding = false;
+      });
+
+      // Touch events for mobile
+      sliderHandle.addEventListener('touchstart', function(e) {
+        isSliding = true;
+        e.preventDefault();
+      });
+
+      document.addEventListener('touchmove', function(e) {
+        if (isSliding) {
+          const touch = e.touches[0];
+          updateSlider(touch.clientX);
+          e.preventDefault();
+        }
+      });
+
+      document.addEventListener('touchend', function() {
+        isSliding = false;
+      });
+
+      // Click to slide
+      slider.addEventListener('click', function(e) {
+        if (!isSliding) {
+          updateSlider(e.clientX);
+        }
+      });
+
+      // Initialize slider position
+      updateSlider(slider.getBoundingClientRect().left + (slider.getBoundingClientRect().width / 2));
+    }
+  });
+});
+
